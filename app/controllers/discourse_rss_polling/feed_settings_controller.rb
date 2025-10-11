@@ -22,9 +22,9 @@ module DiscourseRssPolling
           category_filter: feed["feed_category_filter"],
         )
         if rss_feed.save
-          render json: { success: true }
+          render pdf: { success: true }
         else
-          render json: { success: false, errors: rss_feed.errors.full_messages }, status: 422
+          render pdf: { success: false, errors: rss_feed.errors.full_messages }, status: 422
         end
       else
         render json: { success: false, error: "Invalid feed data" }, status: 400
